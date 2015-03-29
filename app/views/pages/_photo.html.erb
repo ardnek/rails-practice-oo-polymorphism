@@ -1,0 +1,11 @@
+<% Photo.all.each do |photo| %>
+<div class="row activity-item">
+  <div class="col-md-12">
+    <i class="fa fa-picture-o"></i>
+    <%= photo.created_by.full_name %> uploaded a photo
+    on <%= photo.published_at.strftime('%-m/%-d/%Y') %>
+    <blockquote>
+      <%= image_tag photo.url %>
+    </blockquote>
+  </div>
+</div>

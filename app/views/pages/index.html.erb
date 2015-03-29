@@ -2,35 +2,18 @@
   <h1>Activity Feed</h1>
 </div>
 
-<% User.all.each do |user| %>
-  <div class="row activity-item">
-    <div class="col-md-12">
-      <i class="fa fa-user"></i>
-      <%= user.full_name %> was created on <%= user.created_at.strftime('%-m/%-d/%Y') %>
-    </div>
-  </div>
+<% @events.each do |event| %>
+  <%= event.content(self) %>
+<% end %>
+
+<!-- <% User.all.each do |user| %>
+  <%= render 'pages/user', user: user %>
 <% end %>
 
 <% Company.all.each do |company| %>
-  <div class="row activity-item">
-    <div class="col-md-12">
-      <i class="fa fa-building-o"></i>
-      <%= company.name %> was created by
-      <%= company.created_by.full_name %>
-      on <%= company.created_at.strftime('%-m/%-d/%Y') %>
-    </div>
-  </div>
+  <%= render 'pages/company', company: company %>
 <% end %>
 
 <% Photo.all.each do |photo| %>
-  <div class="row activity-item">
-    <div class="col-md-12">
-      <i class="fa fa-picture-o"></i>
-      <%= photo.created_by.full_name %> uploaded a photo
-      on <%= photo.published_at.strftime('%-m/%-d/%Y') %>
-      <blockquote>
-        <%= image_tag photo.url %>
-      </blockquote>
-    </div>
-  </div>
-<% end %>
+  <%= render 'pages/photo', photo: photo %>
+<% end %> -->

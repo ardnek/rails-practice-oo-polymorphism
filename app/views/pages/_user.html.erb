@@ -1,0 +1,7 @@
+<% User.all.each do |user| %>
+<div class="row activity-item">
+  <div class="col-md-12">
+    <i class="fa fa-user"></i>
+    <%= user.full_name %> was created on <%= user.created_at.strftime('%-m/%-d/%Y') %>
+  </div>
+</div>
